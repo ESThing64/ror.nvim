@@ -7,9 +7,9 @@ function M.find()
 	local conf = require("telescope.config").values
 
 	local root_path = vim.fn.getcwd()
-	local models = vim.split(vim.fn.glob(root_path .. "app/models/concerns/tasks/state_licenses/**/*rb"), "\n")
+	local rules = vim.split(vim.fn.glob(root_path .. "app/models/concerns/tasks/state_licenses/**/*rb"), "\n")
 	local parsed_rules = {}
-	for _, value in ipairs(models) do
+	for _, value in ipairs(rules) do
 		-- take only the filename without extension
 		if value ~= "" then
 			local parsed_filename = vim.fn.fnamemodify(value, ":~:.")
