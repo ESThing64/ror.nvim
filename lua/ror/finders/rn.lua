@@ -5,25 +5,26 @@ function M.find()
 	local finders = require("telescope.finders")
 	local previewers = require("telescope.previewers")
 	local conf = require("telescope.config").values
+
 	local root_path = vim.fn.getcwd()
-	local tests =
+	local models =
 		vim.split(vim.fn.glob(root_path .. "app/models/concerns/tasks/state_licenses/registred_nurse/*.rb"), "\n")
-	local parsed_tests = {}
-	for _, test in ipairs(tests) do
+	local parsed_models = {}
+	for _, value in ipairs(models) do
 		-- take only the filename without extension
-		if test ~= "" then
-			local parsed_test = vim.fn.fnamemodify(test, ":~:.")
-			table.insert(parsed_tests, parsed_test)
+		if value ~= "" then
+			local parsed_filename = vim.fn.fnamemodify(value, ":~:.")
+			table.insert(parsed_models, parsed_filename)
 		end
 	end
 
-	if #parsed_tests > 0 then
+	if #parsed_models > 0 then
 		local opts = {}
 		pickers
 			.new(opts, {
-				prompt_title = "Model tests",
+				prompt_title = "Models",
 				finder = finders.new_table({
-					results = parsed_tests,
+					results = parsed_models,
 				}),
 				previewer = previewers.vim_buffer_cat.new(opts),
 				sorter = conf.generic_sorter(opts),
