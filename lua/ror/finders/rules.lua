@@ -8,22 +8,22 @@ function M.find()
 
 	local root_path = vim.fn.getcwd()
 	local models = vim.split(vim.fn.glob(root_path .. "app/models/concerns/tasks/state_licenses/**/*rb"), "\n")
-	local parsed_models = {}
+	local parsed_rules = {}
 	for _, value in ipairs(models) do
 		-- take only the filename without extension
 		if value ~= "" then
 			local parsed_filename = vim.fn.fnamemodify(value, ":~:.")
-			table.insert(parsed_models, parsed_filename)
+			table.insert(parsed_rules, parsed_filename)
 		end
 	end
 
-	if #parsed_models > 0 then
+	if #parsed_rules > 0 then
 		local opts = {}
 		pickers
 			.new(opts, {
-				prompt_title = "Models",
+				prompt_title = "Rules",
 				finder = finders.new_table({
-					results = parsed_models,
+					results = parsed_rules,
 				}),
 				previewer = previewers.vim_buffer_cat.new(opts),
 				sorter = conf.generic_sorter(opts),
