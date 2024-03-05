@@ -30,7 +30,6 @@ function M.list_commands()
 		"Find models",
 		"Find rules",
 		"Find controllers",
-		"Find mailers",
 		"Find views",
 		"Find model tests",
 		"Find controller tests",
