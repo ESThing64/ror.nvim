@@ -8,7 +8,7 @@ function M.select_finders()
 			if finder == "Models" then
 				require("ror.finders.model").find()
 			elseif finder == "Rules" then
-				require("ror.finders.rules").find()
+				require("ror.finders.rule").find()
 			elseif finder == "Controllers" then
 				require("ror.finders.controller").find()
 			elseif finder == "Migrations" then

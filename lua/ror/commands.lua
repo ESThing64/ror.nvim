@@ -83,7 +83,7 @@ function M.list_commands()
 			require("ror.generators.stimulus").generate(close_floating_window)
 		elseif command == "Find rules" then
 			close_floating_window()
-			require("ror.finders.rules").find()
+			require("ror.finders.rule").find()
 		elseif command == "Find models" then
 			close_floating_window()
 			require("ror.finders.model").find()
