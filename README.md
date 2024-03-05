@@ -18,7 +18,9 @@ Plug 'weizheheng/ror.nvim'
        also display the result of the run when it's done.
    - Otherwise, the notification will be shown in the command line through vim.notify.
 2. [dressing.nvim](https://github.com/stevearc/dressing.nvim)
-   - I am using this plugin which make vim.ui.select to use telescope and also vim.ui.input to be a
+
+
+- I am using this plugin which make vim.ui.select to use telescope and also vim.ui.input to be a
        floating window asking for input as shown in my demo.
    - The config I am using for dressing.nvim
 
